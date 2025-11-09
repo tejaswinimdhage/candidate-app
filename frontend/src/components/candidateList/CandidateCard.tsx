@@ -45,8 +45,8 @@ const CandidateCard: React.FC<{ candidate: Candidate }> = ({ candidate }) => {
                         <div className="flex justify-between text-sm mb-2 font-medium">
                             <span>Interviews</span>
                             <div className="space-x-4">
-                                <a href="#" className="text-[#10B981]">Schedule manually</a>
-                                <a href="#" className="text-[#10B981]">Automated scheduling</a>
+                                <a href="#" className="text-[#078361]">Schedule manually</a>
+                                <a href="#" className="text-[#078361]">Automated scheduling</a>
                             </div>
                         </div>
                     </div>
@@ -57,8 +57,8 @@ const CandidateCard: React.FC<{ candidate: Candidate }> = ({ candidate }) => {
                                 <div key={idx} className="flex justify-between mb-1">
                                     <span>{interview?.name}</span>
                                     <div className="space-x-2">
-                                        <a href="#" className="text-[#10B981]">Schedule manually</a>
-                                        <a href="#" className="text-[#10B981]">Automated scheduling</a>
+                                        <a href="#" className="text-[#078361]">Schedule manually</a>
+                                        <a href="#" className="text-[#078361]">Automated scheduling</a>
                                         <span>...</span>
                                     </div>
                                 </div>
