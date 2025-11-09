@@ -17,7 +17,7 @@ export default function Button({
     return (
         <button
             onClick={onClick}
-            className={`flex items-center gap-2 px-4 py-0 border-2 border-[#10B981] text-[#10B981] rounded hover:bg-green-50 transition-colors ${className}`}
+            className={`flex items-center gap-2 px-4 py-0 border-2 border-[#078361] text-[#078361] rounded hover:bg-green-50 transition-colors ${className}`}
         >
             {icon && <span className="flex items-center">{icon}</span>}
             <span>{title}</span>

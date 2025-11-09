@@ -32,7 +32,7 @@ const CandidateCard: React.FC<{ candidate: Candidate }> = ({ candidate }) => {
                 <div className="text-left">
                     <p className="font-medium">{candidate.job_title}</p>
                     <p className="flex align-center text-sm text-gray-500">{<ArrowUp size={14} className='inline mr-1 mt-1' />}{candidate.status}</p>
-                    <p className="text-[#10B981]">{candidate.action_link}</p>
+                    <p className="text-[#078361]">{candidate.action_link}</p>
                 </div>
             </div>
 
