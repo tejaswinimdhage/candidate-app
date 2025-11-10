@@ -33,8 +33,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
   defaultOpen = false,
 }) => {
   // TODO: Add state management for open/closed
-  const [isOpen, setIsOpen] = useState
-    (defaultOpen);
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
     <div className="border-b border-[#e1e1e1]">

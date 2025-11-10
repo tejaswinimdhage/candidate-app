@@ -19,6 +19,8 @@ interface CandidateStore {
     setPage: (page: number) => void;
     applyFilter: () => void;
     resetFilter: () => void;
+    loading: boolean;
+    error: any;
 }
 
 export const useCandidateStore = create<CandidateStore>((set, get) => ({
@@ -28,16 +30,33 @@ export const useCandidateStore = create<CandidateStore>((set, get) => ({
     totalPages: 1,
     perPage: 5,
     filters: {},
+    loading: false,
+    error: null,
 
-    fetchCandidates: async () => {
+    fetchCandidates: async (searchTerm = "") => {
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/candidates');
+            set({ loading: true, error: null });
+
+            // Build URL with optional query param
+            const url = searchTerm
+                ? `http://127.0.0.1:8000/api/candidates?search=${encodeURIComponent(searchTerm)}`
+                : `http://127.0.0.1:8000/api/candidates`;
+
+            const res = await fetch(url);
+
+            if (!res.ok) {
+                set({ loading: false, error: res })
+                throw new Error("Failed to fetch candidates")
+            };
+
             const data = await res.json();
             set({
                 candidates: data.candidates,
                 filteredCandidates: data.candidates,
                 totalPages: Math.ceil(data.candidates.length / get().perPage),
                 currentPage: 1,
+                loading: false,
+                error: null
             });
         } catch (error) {
             console.error('Failed to fetch candidates:', error);

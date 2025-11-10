@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SearchInput } from './SearchInput';
 import { CollapsibleSection } from '../common/CollapsibleSection';
+import { RotateCcw } from "lucide-react";
 
 interface SidebarProps {
   searchValue: string;
@@ -60,10 +61,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ searchValue, onSearchChange })
       </div>
 
       {/* Reset Filters Button */}
-      <button className="mt-6 w-full px-4 py-2 text-[#3574d6] text-[13.9px] font-light flex items-center justify-center gap-2 hover:underline">
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-        </svg>
+      <button className="mt-6 w-full text-primary text-[13.9px] font-light flex items-center justify-start gap-2 hover:underline">
+        <RotateCcw className="w-5 h-5 rotate-[-90deg]" strokeWidth={2} />
         <span>Reset Filters</span>
       </button>
     </aside>
